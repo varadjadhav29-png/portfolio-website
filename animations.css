@@ -1,0 +1,360 @@
+/* =========================================================
+   animations.css — Background animations, aurora, grid,
+   micro-interactions, keyframes
+   ========================================================= */
+
+/* ─── PARTICLE CANVAS ────────────────────────────────────── */
+#particle-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* ─── AURORA BLOBS ────────────────────────────────────────── */
+/*  Layered radial gradient orbs that drift continuously.     */
+.aurora-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Dark mode aurora */
+[data-theme="dark"] .aurora-blob { opacity: 0.55; }
+[data-theme="light"] .aurora-blob { opacity: 0.22; }
+
+.aurora-blob-1 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, #4f46e5 0%, transparent 70%);
+  top: -200px; left: -200px;
+  animation: aurora-1 18s ease-in-out infinite alternate;
+}
+
+.aurora-blob-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  top: 30%; right: -150px;
+  animation: aurora-2 22s ease-in-out infinite alternate;
+}
+
+.aurora-blob-3 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #2563eb 0%, transparent 70%);
+  bottom: -200px; left: 20%;
+  animation: aurora-3 26s ease-in-out infinite alternate;
+}
+
+.aurora-blob-4 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+  top: 60%; left: 60%;
+  animation: aurora-4 20s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0%   { transform: translate(0, 0)    scale(1); }
+  25%  { transform: translate(120px, 80px) scale(1.1); }
+  50%  { transform: translate(60px, 150px) scale(0.95); }
+  75%  { transform: translate(-60px, 100px) scale(1.05); }
+  100% { transform: translate(40px, -80px) scale(1.12); }
+}
+
+@keyframes aurora-2 {
+  0%   { transform: translate(0, 0)    scale(1); }
+  33%  { transform: translate(-100px, 60px) scale(1.08); }
+  66%  { transform: translate(-50px, -120px) scale(0.9); }
+  100% { transform: translate(80px, -60px) scale(1.15); }
+}
+
+@keyframes aurora-3 {
+  0%   { transform: translate(0, 0)    scale(1); }
+  40%  { transform: translate(80px, -100px) scale(1.1); }
+  80%  { transform: translate(-80px, -50px) scale(0.92); }
+  100% { transform: translate(40px, 60px) scale(1.05); }
+}
+
+@keyframes aurora-4 {
+  0%   { transform: translate(0, 0)    scale(1); }
+  50%  { transform: translate(-120px, -80px) scale(1.2); }
+  100% { transform: translate(60px, 100px) scale(0.85); }
+}
+
+/* ─── ANIMATED DOT GRID ───────────────────────────────────── */
+/*  A subtle grid of dots that appears on hero section.        */
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle, rgba(99,102,241,0.2) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%,
+              transparent 30%, black 100%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%,
+              transparent 30%, black 100%);
+  animation: dot-grid-fade 4s ease-out forwards;
+}
+
+[data-theme="light"] .dot-grid {
+  background-image:
+    radial-gradient(circle, rgba(99,102,241,0.15) 1px, transparent 1px);
+}
+
+@keyframes dot-grid-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── ANIMATED GRADIENT LINE ──────────────────────────────── */
+/*  Horizontal shimmer lines that sweep across sections.       */
+.shimmer-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent) 40%,
+    var(--accent-light) 50%,
+    var(--accent) 60%,
+    transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer-sweep 4s linear infinite;
+  opacity: 0.4;
+}
+
+.shimmer-line.top    { top: 0; }
+.shimmer-line.bottom { bottom: 0; }
+
+@keyframes shimmer-sweep {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── NOISE OVERLAY ───────────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ─── GLOWING NAV BORDER ──────────────────────────────────── */
+#navbar::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(99,102,241,0.4) 30%,
+    rgba(129,140,248,0.6) 50%,
+    rgba(99,102,241,0.4) 70%,
+    transparent 100%);
+  background-size: 200% auto;
+  animation: nav-glow 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+#navbar.scrolled::after { opacity: 1; }
+
+@keyframes nav-glow {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── HERO TEXT GRADIENT ANIMATION ───────────────────────── */
+.hero-name .accent {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 40%, #a5b4fc 70%, #6366f1 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 5s linear infinite;
+}
+
+@keyframes text-shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── SECTION DIVIDER GLOW ────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, var(--border), transparent);
+  position: relative;
+  overflow: visible;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── CARD SHINE EFFECT ───────────────────────────────────── */
+/*  On hover, a moving shine slides across cards.              */
+.skill-card,
+.project-card,
+.tl-card,
+.ahi {
+  isolation: isolate;
+}
+
+.skill-card::after,
+.project-card .card-shine,
+.tl-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0.6s var(--ease);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skill-card:hover::after,
+.tl-card:hover::after {
+  background-position: 200% 0;
+}
+
+/* ─── SPINNING GRADIENT BORDER ────────────────────────────── */
+/*  Applied to avatar for a premium spinning border effect.    */
+.avatar-glow-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 34px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    var(--accent) 25%,
+    var(--accent-light) 50%,
+    var(--accent) 75%,
+    transparent 100%
+  );
+  animation: conic-spin 4s linear infinite;
+  z-index: -1;
+}
+
+.avatar-glow-ring::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--bg-card);
+  border-radius: 32px;
+}
+
+@keyframes conic-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── FLOATING PARTICLES (CSS fallback) ───────────────────── */
+.float-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-orb linear infinite;
+}
+
+@keyframes float-orb {
+  0%   { transform: translateY(100vh) rotate(0deg);  opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-20px) rotate(720deg); opacity: 0; }
+}
+
+/* ─── PAGE LOAD ANIMATION ─────────────────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge  { animation: fade-in-up 0.7s var(--ease) 0.2s both; }
+.hero-name   { animation: fade-in-up 0.8s var(--ease) 0.35s both; }
+.hero-tagline{ animation: fade-in-up 0.8s var(--ease) 0.5s both; }
+.hero-intro  { animation: fade-in-up 0.8s var(--ease) 0.65s both; }
+.hero-btns   { animation: fade-in-up 0.8s var(--ease) 0.8s both; }
+.hero-avatar-wrap { animation: fade-in-up 1s var(--ease) 0.5s both; }
+
+/* ─── PROGRESS BARS (skill fill animation) ────────────────── */
+@keyframes bar-fill {
+  from { width: 0%; }
+}
+
+/* ─── CURSOR TRAIL ────────────────────────────────────────── */
+.cursor-trail {
+  position: fixed;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  animation: trail-fade 0.6s ease-out forwards;
+}
+
+@keyframes trail-fade {
+  0%   { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0); }
+}
+
+/* ─── REDUCED MOTION SUPPORT ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob,
+  .avatar-glow-ring,
+  .avatar-ring,
+  .avatar-ring2,
+  .hero-badge,
+  .hero-name,
+  .hero-tagline,
+  .hero-intro,
+  .hero-btns,
+  .hero-avatar-wrap,
+  .hero-stat {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #particle-canvas { display: none; }
+}

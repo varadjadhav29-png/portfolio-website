@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO Title -->
+  <title>Varad Jadhav| AI Engineer | AIML Portfolio</title>
+
+  <!-- ✅ SEO Description -->
+  <meta name="description"
+    content="Varad Jadhav – AI & Machine Learning student, developer. Explore projects in AI, Robotics, IoT, and Automation." />
+
+  <!-- Author -->
+  <meta name="author" content="Varad Shirish Jadhav" />
+
+  <!-- ✅ Open Graph (for LinkedIn & sharing) -->
+  <meta property="og:title" content="Varad Jadhav | AI Engineer Portfolio" />
+  <meta property="og:description" content="Explore AI, ML, Robotics & Automation projects by Varad Jadhav." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourgithubrukh-dotcom.github.io" />
+
+  <!-- ✅ Google Identity (Schema Markup) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Varad Jadhav",
+    "url": "https://github.com/varadjadhav29-png",
+    "sameAs": [
+      "https://www.linkedin.com/in/varaadjadhav/",
+      "https://github.com/varadjadhav29-png"
+    ]
+  }
+  </script>
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" /> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Google verification -->
+  <meta name="google-site-verification" content="YOUR_CODE_HERE">
+
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+
+<body>
+
+  <!-- ── Custom cursor elements ── -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ── Particle canvas (sits behind everything) ── -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── Aurora blob background ── -->
+  <div class="aurora-wrap" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+    <div class="aurora-blob aurora-blob-3"></div>
+    <div class="aurora-blob aurora-blob-4"></div>
+  </div>
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================= -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="#home" class="nav-logo" aria-label="Varad Jadhav Home">
+          V<span>.</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hackathons">Hackathons</a></li>
+          <li><a href="#certifications">Certs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle dark/light mode">
+            <i class="fa-solid fa-sun" id="themeIcon"></i>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false"
+            aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMobile()">About</a></li>
+      <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="#hackathons" onclick="closeMobile()">Hackathons</a></li>
+      <li><a href="#certifications" onclick="closeMobile()">Certifications</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
+  <section id="home" aria-label="Introduction">
+
+    <!-- Dot grid background decoration -->
+    <div class="dot-grid" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: text -->
+        <div>
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Open to Internships &amp; Opportunities
+          </div>
+
+          <h1 class="hero-name">
+            Varad Jadhav<br>
+            <span class="accent">AIML Student </span>
+          </h1>
+
+          <p class="hero-tagline">
+            AIML Student &nbsp;|&nbsp; AI, Robotics &amp; Automation Enthusiast
+          </p>
+
+          <p class="hero-intro">
+            Second-Year B.Tech student at <strong>VIT Bhopal University, Bhopal</strong>.
+            I build intelligent systems from trained ML models to wall-climbing robots.
+            Blending code, curiosity, and hardware to create things that push limits.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#projects" class="btn-primary">
+              <i class="fa-solid fa-rocket" aria-hidden="true"></i> View Projects
+            </a>
+            <a href="#contact" class="btn-outline">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: avatar + floating chips -->
+        <div class="hero-avatar-wrap" aria-hidden="true">
+          <div class="avatar-glow-ring"></div>
+          <div class="avatar-ring"></div>
+          <div class="avatar-ring2"></div>
+          <div class="hero-avatar">
+            <img src="varad.jpeg" alt="Photo of Varad Jadhav" class="hero-avatar-img" />
+          </div>
+          <!-- Floating stat chips -->
+
+
+          <div class="hero-stat">
+            <div class="stat-num">2+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+  </section>
+
+  <!-- =========================================================
+       ABOUT
+  ========================================================= -->
+  <section id="about" class="section" aria-label="About me">
+    <div class="shimmer-line top" aria-hidden="true"></div>
+    <div class="shimmer-line bottom" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Who I am</p>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Bio text -->
+        <div class="about-text reveal d1">
+          <p>
+            I'm <strong>Varad Shirish Jadhav</strong>, a Second-Year B.Tech student
+            specialising in <strong>Artificial Intelligence &amp; Machine Learning</strong>
+            at VIT Bhopal University, Bhopal , Madhya Pradesh, India.
+          </p>
+          <p>
+            My journey started with a simple question: <em>can machines truly learn like humans?</em>
+            That curiosity pushed me to explore Python, dive into neural networks, solder my
+            first ESP32, and compete in national hackathons all within my first year of college.
+          </p>
+          <p>
+            I'm deeply passionate about the intersection of <strong>AI, Robotics, IoT,</strong>
+            and <strong>Process Automation</strong>. Whether that's training a classification model
+            or wiring up a robot that climbs vertical walls, I love turning ambitious ideas into
+            physical reality.
+          </p>
+          <p>
+            Outside tech, I explore how automation solves real-world challenges from precision
+            agriculture to accessibility tools. I'm actively looking for <strong>internships,
+              open-source contributions,</strong> and collaborative projects that push my limits.
+          </p>
+        </div>
+
+        <!-- Highlight cards -->
+        <div class="about-cards reveal d2">
+          <div class="ahi">
+            <div class="ahi-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+            <div>
+              <h4>Artificial Intelligence &amp; ML</h4>
+              <p>Building models that learn from data prep and feature engineering to neural network training.</p>
+            </div>
+          </div>
+          <div class="ahi">
+            <div class="ahi-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+            <div>
+              <h4>Robotics &amp; Hardware</h4>
+              <p>Designing and programming physical robots using ESP32, motor drivers, and sensor arrays.</p>
+            </div>
+          </div>
+          <div class="ahi">
+            <div class="ahi-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+            <div>
+              <h4>IoT &amp; Automation</h4>
+              <p>Connecting devices and automating workflows with n8n, UiPath, and embedded firmware.</p>
+            </div
+
+          </div>
+          <div class="ahi">
+            <div class="ahi-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <div>
+              <h4>Software Development</h4>
+              <p>Clean, expressive code in Python, Rust, and Java for scripts, games, and web apps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SKILLS
+  ========================================================= -->
+  <section id="skills" class="section" aria-label="Skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">What I work with</p>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <p class="section-sub">A growing toolkit spanning languages, libraries, and hardware platforms.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal d1">
+          <div class="skill-icon"><i class="fa-solid fa-terminal" aria-hidden="true"></i></div>
+          <h3>Programming Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Rust</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal d2">
+          <div class="skill-icon"><i class="fa-solid fa-chart-area" aria-hidden="true"></i></div>
+          <h3>ML &amp; Data Libraries</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal d3">
+          <div class="skill-icon"><i class="fa-solid fa-wrench" aria-hidden="true"></i></div>
+          <h3>Tools &amp; Platforms</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">n8n</span>
+            <span class="skill-tag">UiPath</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal d4">
+          <div class="skill-icon"><i class="fa-solid fa-plug" aria-hidden="true"></i></div>
+          <h3>Hardware &amp; IoT</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">ESP32</span>
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">Ultrasonic Sensors</span>
+            <span class="skill-tag">Motor Drivers</span>
+            <span class="skill-tag">Suction Systems</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROJECTS
+  ========================================================= -->
+  <section id="projects" class="section" aria-label="Projects">
+    <div class="shimmer-line top" aria-hidden="true"></div>
+    <div class="shimmer-line bottom" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">What I've built</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">Hardware and software projects that push learning boundaries.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: ai sediment anaylyser -->
+        <article class="project-card reveal d1">
+          <div class="project-top">
+            <div class="project-icon">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            </div>
+            <span class="project-num">01</span>
+          </div>
+          <h3 class="project-title">Ai Sentiment Analyser</h3>
+          <p class="project-desc">
+            This is a simple sentiment analysis project built using Python and basic machine learning concepts. The
+            program can classify a sentence into three categories: positive, negative, or neutral.
+
+            The idea behind this project is to understand how text data is handled and how a basic model can be trained
+            to make predictions.
+          </p>
+          <div class="project-stack">
+            <span class="project-tech">Python</span>
+            <span class="project-tech">Scikit</span>
+            <span class="project-tech">CountVectorizer</span>
+            <span class="project-tech">Multinomial Naive Bayes</span>
+
+          </div>
+        </article>
+
+        <!-- Project 2: food ordering app  -->
+        <article class="project-card reveal d2">
+          <div class="project-top">
+            <div class="project-icon">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            </div>
+            <span class="project-num">02</span>
+          </div>
+          <!-- Project 2: Food Ordering App  -->
+          <h3 class="project-title">Food Ordering App</h3>
+          <p class="project-desc">
+            The Food Ordering App is a simple graphical desktop application built using Python and Tkinter. It allows
+            users to browse a menu, add items to a cart, view total cost, and place an order. This project demonstrates
+            GUI development, event-driven programming, and basic data handling.
+
+            The system simulates the workflow of a real-world food ordering interface with an easy-to-use layout.
+
+
+          </p>
+          <div class="project-stack">
+            <span class="project-tech">Python</span>
+            <span class="project-tech">Tkinter (Python GUI Toolkit)</span>
+            <span class="project-tech">Messagebox module for pop-ups and alerts</span>
+            <span class="project-tech">Dictionary-based data storage for menu and cart</span>
+            <span class="project-tech">Algorithms</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CERTIFICATIONS
+  ========================================================= -->
+  <section id="certifications" class="section" aria-label="Certifications">
+    <div class="shimmer-line top" aria-hidden="true"></div>
+    <div class="shimmer-line bottom" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Credentials</p>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+
+      <div class="cert-box reveal d1">
+        <div class="cert-text">
+          <h3>Verified Learning &amp; Credentials</h3>
+          <p>
+            Continuously upskilling through structured courses, workshops, and hands-on
+            programs. My certifications span machine learning fundamentals, Python for
+            data science, IoT development, robotic process automation, and cloud basics
+            each representing applied learning beyond the classroom syllabus.
+          </p>
+          <div class="cert-badges">
+            <span class="cert-badge">
+              <i class="fa-brands fa-python" aria-hidden="true"></i> Python &amp; Data Science
+            </span>
+            <span class="cert-badge">
+              <i class="fa-solid fa-brain" aria-hidden="true"></i> Machine Learning
+            </span>
+            <span class="cert-badge">
+              <i class="fa-solid fa-plug" aria-hidden="true"></i> IoT Development
+            </span>
+            <span class="cert-badge">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i> RPA / UiPath
+            </span>
+            <span class="cert-badge">
+              <i class="fa-brands fa-google" aria-hidden="true"></i> Cloud Basics
+            </span>
+          </div>
+        </div>
+
+        <div class="cert-action">
+          <div class="cert-icon-big" aria-hidden="true">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <a href="
+" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fa-brands fa-google-drive" aria-hidden="true"></i>
+            View All Certifications
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTACT
+  ========================================================= -->
+  <section id="contact" class="section" aria-label="Contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Get in touch</p>
+        <h2 class="section-title">Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: links -->
+        <div class="contact-left reveal d1">
+          <p>
+            Open to interesting conversations, collaborations, internship offers, or just
+            a friendly hello. Whether you're a recruiter, fellow developer, or someone
+            with a cool idea my inbox is open!
+          </p>
+
+          <div class="contact-links">
+
+            <a href="mailto: varadjadhav29@gmail.com" class="contact-link" aria-label="Send email to Pranav">
+              <div class="cl-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+              <div class="cl-info">
+                <div class="cl-label">Email</div>
+                <div class="cl-val">varadjadhav29@gmail.com</div>
+              </div>
+              <i class="fa-solid fa-arrow-right cl-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://github.com/varadjadhav29-png" target="_blank" rel="noopener noreferrer" class="contact-link"
+              aria-label="Visit GitHub profile">
+              <div class="cl-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+              <div class="cl-info">
+                <div class="cl-label">GitHub</div>
+                <div class="cl-val">varadjadhav29-png</div>
+              </div>
+              <i class="fa-solid fa-arrow-right cl-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/varaadjadhav/" target="_blank" rel="noopener noreferrer"
+              class="contact-link" aria-label="Visit LinkedIn profile">
+              <div class="cl-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
+              <div class="cl-info">
+                <div class="cl-label">LinkedIn</div>
+                <div class="cl-val">Varad Jadhav</div>
+              </div>
+              <i class="fa-solid fa-arrow-right cl-arrow" aria-hidden="true"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/varadd_jadhavv/" target="_blank" rel="noopener noreferrer"
+              class="contact-link" aria-label="Visit Instagram profile">
+              <div class="cl-icon"><i class="fa-brands fa-instagram-in" aria-hidden="true"></i></div>
+              <div class="cl-info">
+                <div class="cl-label">Instagram</div>
+                <div class="cl-val">Varad Jadhav</div>
+              </div>
+              <i class="fa-solid fa-arrow-right cl-arrow" aria-hidden="true"></i>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right: contact form -->
+        <div class="contact-form-wrap reveal d2">
+          <h3>Send a Message</h3>
+
+          <form action="https://formspree.io/f/mreowyea" method="POST">
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Rahul Sharma" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="rahul@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Hey Rahul, I'd love to collaborate on…"
+                required></textarea>
+            </div>
+
+            <!-- Subject -->
+            <input type="hidden" name="_subject" value="New Portfolio Message">
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="https://github.com/varadjadhav29-png">
+
+            <button type="submit" class="btn-primary btn-full-width">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-logo">Varad<span>.</span></div>
+
+        <p class="footer-copy">
+          &copy; <span id="year"></span> Varad Shirish Jadhav All rights reserved.
+        </p>
+
+        <div class="footer-socials">
+          <a href="mailto:varadjadhav29@gmail.com" class="footer-social" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/varadjadhav29-png" target="_blank" rel="noopener noreferrer" class="footer-social"
+            aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/varaadjadhav/" target="_blank" rel="noopener noreferrer"
+            class="footer-social" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+        SCRIPTS (deferred for performance)
+  ========================================================= -->
+  <script src="js/main.js"></script>
+  <script src="js/particles.js"></script>
+
+</body>
+
+</html>

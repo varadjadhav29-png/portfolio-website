@@ -262,3 +262,33 @@ max-width: 100%;
 
   a { color: #6366f1; }
 }
+
+@media (max-width:768px){
+
+  .container{
+    width:100%;
+    padding-inline:16px;
+  }
+
+  .about-content{
+    width:100%;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:2rem;
+  }
+
+  h2{
+    font-size:1.5rem;
+  }
+
+  p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+}

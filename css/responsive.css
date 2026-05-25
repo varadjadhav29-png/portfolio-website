@@ -264,30 +264,19 @@ max-width: 100%;
 
   a { color: #6366f1; }
 }
-@media (max-width:768px){
+@media (max-width: 768px) {
+    .about-grid {
+        display: block !important; 
+    }
 
-  *{
-    max-width:100%;
-  }
+    .about-cards {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;            
+    }
 
-  body{
-    overflow-x:hidden;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .contact-grid,
-  .projects-grid,
-  .skills-grid{
-    overflow:hidden;
-  }
-
-}
-
-body{
-  overflow-x:hidden;
-}
-
-section{
-  overflow:hidden;
+    .ahi {
+        width: 100% !important; 
+        margin-bottom: 20px;
+    }
 }

@@ -344,3 +344,35 @@ max-width: 100%;
   }
 
 }
+@media (max-width:768px){
+
+  .project-card{
+    padding:20px;
+  }
+
+  .cert-box{
+    padding:20px;
+  }
+
+  .contact-form-wrap{
+    padding:20px;
+  }
+
+  .timeline-item{
+    grid-template-columns:1fr;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .cert-box{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  .hero-avatar-wrap{
+    max-width:240px;
+    margin:auto;
+  }
+
+}

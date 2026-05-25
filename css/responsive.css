@@ -48,8 +48,10 @@ gap: 0;
 /* SHOW avatar on mobile/tablet */
 .hero-avatar-wrap {
 display: flex;
-width: 240px;
-height: 340px;
+width: 100%;
+max-width: 220px;
+height: auto;
+aspect-ratio: 240 / 340;
 margin: 40px auto 0;
 align-items: center;
 justify-content: center;

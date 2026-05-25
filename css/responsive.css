@@ -266,11 +266,24 @@ max-width: 100%;
 }
 @media (max-width:768px){
 
+  *{
+    max-width:100%;
+  }
+
   body{
     overflow-x:hidden;
   }
-   
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .projects-grid,
+  .skills-grid{
+    overflow:hidden;
+  }
+
 }
+
 body{
   overflow-x:hidden;
 }

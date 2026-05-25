@@ -305,3 +305,42 @@ max-width: 100%;
   }
 
 }
+@media (max-width:768px){
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .cert-box{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .hero-avatar-wrap{
+    max-width:260px;
+  }
+
+  .timeline-item{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .project-card,
+  .skill-card,
+  .contact-form-wrap,
+  .cert-box{
+    padding:20px;
+  }
+
+  .hero-name{
+    font-size:42px;
+  }
+
+}

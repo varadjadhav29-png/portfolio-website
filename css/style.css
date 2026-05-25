@@ -93,7 +93,6 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   transition: background var(--t) var(--ease), color var(--t) var(--ease);
-  cursor: none; /* custom cursor */
 }
 
 a {
@@ -180,38 +179,6 @@ img {
 .d3 { transition-delay: 0.25s; }
 .d4 { transition-delay: 0.35s; }
 .d5 { transition-delay: 0.45s; }
-
-/* ─── CUSTOM CURSOR ──────────────────────────────────────── */
-#cursor-dot,
-#cursor-ring {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
-
-#cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-}
-
-#cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(99, 102, 241, 0.5);
-  transition: width 0.2s var(--ease), height 0.2s var(--ease),
-              border-color 0.2s var(--ease), opacity 0.2s var(--ease);
-}
-
-#cursor-ring.hover {
-  width: 56px;
-  height: 56px;
-  border-color: var(--accent);
-  opacity: 0.7;
-}
 
 /* ─── BUTTONS ─────────────────────────────────────────────── */
 .btn-primary {

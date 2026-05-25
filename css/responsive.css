@@ -292,3 +292,16 @@ max-width: 100%;
   }
 
 }
+@media (max-width:768px){
+
+  .skill-card,
+  .service-card,
+  .card{
+      padding:20px;
+  }
+
+  .container{
+      padding-inline:16px;
+  }
+
+}

@@ -1242,3 +1242,57 @@ body{
   overflow-x:hidden;
   max-width:100%;
 }
+/* ===== MOBILE OVERFLOW FIX ===== */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .projects-grid,
+  .skills-grid {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-avatar-wrap {
+    max-width: 100%;
+  }
+
+  .hero-stat {
+    display: none;
+  }
+
+  .hero-name {
+    word-break: break-word;
+  }
+
+  .project-card,
+  .skill-card,
+  .tl-card,
+  .cert-box,
+  .contact-form-wrap {
+    width: 100%;
+  }
+}

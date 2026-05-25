@@ -1262,42 +1262,11 @@ footer {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(99,102,241,0.2);
 }
-@media (max-width:768px){
 
-  .hero-grid,
-  .about-grid,
-  .contact-grid,
-  .cert-box{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
+body{
+  overflow-x:hidden;
+}
 
-  .hero-avatar-wrap{
-    max-width:260px;
-  }
-
-  .timeline-item{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:flex;
-  }
-
-  .project-card,
-  .skill-card,
-  .contact-form-wrap,
-  .cert-box{
-    padding:20px;
-  }
-
-  .hero-name{
-    font-size:42px;
-  }
-
+section{
+  overflow:hidden;
 }
